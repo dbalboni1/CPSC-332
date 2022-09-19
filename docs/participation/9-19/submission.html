@@ -8,6 +8,17 @@
 </head>
 <body>
     <h1>This is a destination (check url for submissions)</h1>
-    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FlDR0wnXboVr8c%2Fgiphy.gif&f=1&nofb=1" alt="Peter Pan">
+    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2FlDR0wnXboVr8c%2Fgiphy.gif&f=1&nofb=1" id="gif" alt="Peter Pan">
+    <button onClick="deleteGif()">
+        DE-ANNOYIFY ^
+    </button>
+    <script>
+        function deleteGif() {
+            document.getElementById("gif").style.display="none";
+        }
+    </script>
+
+    <input type="checkbox">
+
 </body>
 </html>
