@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>effects</title>
+
+    <style>
+        div,
+        body {
+            text-align: center;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        div {
+            height: 150px;
+            width: 150px;
+
+            /* height: 600px;
+
+            position: relative;
+            position: absolute;
+            */
+        }
+
+        #top {
+            background-color: darkseagreen;
+            position: fixed;
+            z-index: 100;
+        }
+
+        #middle {
+            border: solid 2px red;
+            color: blue;
+            background-color: azure;
+            position: relative;
+            z-index: 4;
+    
+
+            /* relative */
+            /* position: relative;
+            left: -50px;
+            top: -50px; */
+            
+
+            /* fixed */
+            /* position: fixed;
+            left: 0px;
+            top: 0px; */
+            
+
+            /*  absolute
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: -50px;
+            */
+        }
+
+        #bottom {
+            background-color: blueviolet;
+            position: relative;
+            top: -10px;
+            left: 50px;
+            z-index: 5;
+        }
+
+        #container {
+            position: relative;
+        }
+
+        /*
+        body {
+            position: relative;
+        }*/
+
+        #top-bar {
+            position:fixed;
+            width: 100%;
+            height: 20px;
+            background-color: aquamarine;
+        }
+
+        #fake-button {
+            font-size: xx-large;
+
+            text-shadow: 5px 2px 5px seagreen;
+
+            box-shadow: 5px 2px 5px purple;
+        }
+
+        #continue {
+            opacity: 50%;
+            background-color: black;
+            height: 100%;
+            right: 0%;
+            top:0px;
+            position: fixed;
+            z-index: 10000;
+
+            font-size: xx-large;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="top-bar">jkalsdjfl</div>
+    <div id="top">Top (bottom?)</div>
+    <div id="middle">middle</div>
+    <div id="bottom">bottom</div>
+
+    <div id="fake-button">TGIF</div>
+
+    <div id="continue">CONTINUE</div>
+</body>
+
+</html>
