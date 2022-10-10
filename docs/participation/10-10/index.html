@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-10 Participation</title>
+
+    <script>
+        window.onload = function() {
+            var myInt = 42;
+            let myOtherInt = 9001;
+            anotherInt = 9000;
+            //don't use this ^^
+
+            const SOME_VALUE = 3.141592653589793238462643383
+
+            let myDouble;
+        }
+
+        function printTwoThingsToTheConsole(message, someNumber) {
+            console.log("The message is: " + message +
+                "and someNumber is: " + someNumber);
+            return 9001;
+        }
+
+        let myResult = printTwoThingsToTheConsole(42, "message");
+        console.log(myResult);
+
+        try {
+            arrowAdd2(40,1,2);
+        } catch (error) {
+            console.log(error);
+        }
+
+        let arrowAdd2 = (x,y,z) => x + 2;
+        //OR
+        //var arrowAdd2 = (x,y,z) => x + 2;
+        arrowAdd2(40,1,2);
+
+        var myArray = [1, 2, 3, 4];
+
+        for (let index = 0; index < myArray.length; index++) {
+            console.log(myArray[index]);
+        }
+
+        for (const iterator of myArray) {
+            console.log(iterator);
+        }
+
+        myArray.forEach(function(item, i) {
+            console.log(item + " " + i);
+        });
+
+        //Javascript array sorting is muy especial aka difficult
+
+        var myObject = {
+            name: "John",
+            someNumber: 11,
+            anArray: [1,2,3],
+
+            echo: function(value) {
+                console.log(value);
+            },
+
+            get numberPlusOne() {
+                return this.someNumber + 1;
+            },
+
+            set someNumberPlusAnother(num) {
+                someNumber += num;
+            },
+        };
+
+        myObject.name = "New Name";
+        console.log(myObject.name);
+        myObject.echo("Hello World!");
+
+        console.log(myObject.numberPlusOne);
+        //console.log(myObject.someNumberPlusAnother = 9000);
+
+        let dateTimeNow = new Date();
+        console.log("seconds: " + dateTimeNow.getSeconds());
+
+        var currentDate = {
+            dateTime: null,
+
+        }
+
+        document.getElementById("update-date")
+            .addEventListener("click", pizzaTime());
+
+        function pizzaTime() {
+            console.log("Is it pizza time?");
+        };
+    </script>
+</head>
+
+<body>
+    <h1>Javascript ya'heard</h1>
+    <a href="../../index.html">Back to home</a>
+
+    <div>
+        <p>
+            <span id="data-text">
+                Click the button...
+            </span>
+        </p>
+
+        <p>
+            <button id="update-date">
+                Click to see current date time!
+            </button>
+        </p>
+    </div>
+</body>
+
+</html>
