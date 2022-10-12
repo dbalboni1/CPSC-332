@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-12 Participation</title>
+
+    <script>
+        window.onload = function () {
+            var thisDocument = document.getElementById("container");
+            console.log(thisDocument.innerHTML);
+
+            console.log(window.innerWidth);
+            console.log(window.innerHeight);
+            console.log(navigator.platform);
+
+            var listItems = document.getElementsByTagName("li");
+            var unorderedList= document.getElementsByClassName("unordered-list");
+            var allDivs = document.querySelectorAll("body div");
+            var firstDivs = document.querySelector("body div");
+
+            //event handler
+            document.getElementById("butt-start")
+                                .addEventListener("click", startClock);
+            document.getElementById("butt-end")
+                                .addEventListener("click", stopClock);
+            /*document.getElementById("date-text")
+                                .addEventListener(setTime)*/
+            
+            let currentDate = new Date();
+            let time = currentDate.getHours() + ":" + currentDate.getMinutes() 
+                        + ":" + currentDate.getSeconds();
+            let cDate = currentDate.getFullYear() + '-' + (currentDate.getMonth() + 1) 
+                        + '-' + currentDate.getDate();
+
+            function startClock() {
+                console.log("start clock");
+                clock = setInterval(updateClock, 1000);
+            }
+
+            function stopClock() {
+                console.log("stop clock");
+                clearInterval(clock);
+                document.getElementById("date-text").innerHTML = "-----Paused-----" + cDate + " " + time;
+            }
+
+            function updateClock() {
+                //console.log("I'm a clock")
+                document.getElementById("date-text").innerHTML = cDate + " " + time;
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Javascript woo</h1>
+    <a href="../../index.html">Back to home</a>
+
+    <div id="container">
+        <p>This is a container</p>
+    </div>
+    <div>
+        <p>
+            <span id="date-text">
+                Click the button...
+            </span>
+        </p>
+
+        <p>
+            <button id="butt-start">
+                Start Clock
+            </button>
+            <button id="butt-end">
+                Stop Clock
+            </button>
+        </p>
+    </div>
+</body>
+
+</html>
