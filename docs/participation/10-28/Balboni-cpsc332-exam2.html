@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPSC 332 Exam 2</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"></script>
+
+    <style>
+        fieldset {
+            padding: 5px;
+            margin: 10px;
+            border-width: 3px;
+            border-color: aquamarine;
+            border-style: dashed;
+        }
+        form {
+            padding: 5px;
+            margin: 10px;
+        }
+        legend {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        #group {
+            justify-content: center;
+            align-items: center;
+        }
+        #alert {
+            background-color: red;
+            color: white;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            function onSubmit() {
+                var input1 = $('#response1').val();
+                var input2 = $('#response2').val();
+                var input3 = $('#response3').val();
+
+                if( input1.length == 0 || input2.length == 0 || input3.length == 0) {
+                    $("#alert").css("visibility", "true");
+                    return false;
+                }
+    
+                return true;
+            }
+
+            $("#clear").on("click",function() {
+                $('#response1').val('');
+                $('#response2').val('');
+                $('#response3').val('');
+                /*
+                $('#response1')[0].reset();
+                $('#response2')[0].reset();
+                $('#response3')[0].reset();
+                */
+            });
+
+            $("#calc").on("click", function() {
+                var rand = Math.random()*9999 + 1;
+
+                $("#response3").val(rand);
+            })
+
+            $(".inputs").on("click",function() {
+                $("#alert").css("visibility", "false");
+            });
+
+            $(".inputs").mouseover(function() {
+                $(".inputs").css("color","lightyellow");
+            })
+            $(".inputs").mouseleave(function() {
+                $(".inputs").css("color","black");
+            });
+        }
+    </script>
+
+</head>
+
+<body>
+    <div>
+
+    </div>
+        <fieldset>
+            <legend>CPSC 332 Exam 2 Answer Submission Form</legend>
+            <h3 id="alert" hidden>All fields must be filled</h3>
+            <form onsubmit="return onSubmit()" action="/https://gu-dmo.alwaysdata.net/exam2/exam-submission.php">
+                <div id="group">
+                    <label for="response1">The Ultimate Question:</label>
+                    <input type="text" id="response1" name="response1" class="inputs"><br><br>
+                    <label for="response2">The Answer:</label>
+                    <input type="text" id="response2" name="response2" class="inputs"><br><br>
+                    <label for="response3">Calculation Result:</label>
+                    <input type="text" id="response3" name="response3" class="inputs" readonly><br><br>
+                </div>
+                <div id="group">
+                    <input type="submit" value="Submit">
+                    <input type="button" value="Clear Form" id="clear">
+                    <input type="button" value="Calculate" id="calc">
+                </div>
+            </form>
+        </fieldset>
+
+</body>
+
+</html>

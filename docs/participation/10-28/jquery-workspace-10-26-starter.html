@@ -47,7 +47,7 @@
 
             //#6 Events -- handled similar to standard JS but more concise!
             //let's add a button with JQuery. it's content (label) and an id!
-
+/*
             document.getElementById("container").addEventListener("click", callbackFunction);
             //^ This same as this v
             $("#container").on("click", callbackFunction);
@@ -55,7 +55,7 @@
             $("#container").click(() => {
                 alert("clicked");
             });
-
+*/
             //now let's add an event handler for when we click it
             //we need a callback function!
             function callbackFunction() {
@@ -97,34 +97,53 @@
                 borderRadius: "20px",
                 "margin-top": "10px",
                 
-            })
+            });
             //Activity (Using JQuery):
             //1. Center the button created in this lecture using the property-value pair CSS method 1 demonstrated during lecture.
             //2. Apply a background color, border, padding, and margin (your choice) to the ordered list using the object literal method demonstrated during lecture
             //3. Add an event listener to the ordered list list items so the color changes as you hover over each individual list item (color is your choice).
-            
+            $("button").css({
+                display: "flex",
+                "justify-content": "center",
+                "align-items": "center",
+                padding: "50px",
+            });
 
+            $("ol").css({
+                "background-color": "green",
+            });
+
+            $("li").hover(
+                function() {
+                    $(this).css("color", "red");
+                }, function() {
+                    $(this).css("color", "purple");
+                }
+            );
+
+            /*
             $("div").attr("class", "draggable ui-widget-content");
 
             $(function() {
                 $(".draggable").draggable();
             });
-
+            */
         }); //end of ready function 
     </script>
 
 </head>
 
 <body>
-    <container></container>
     <a href="../../index.html">Back to home</a>
     <div id="container">
         <h1>9. JQuery</h1>
         <ol>
-
+            <li>yemen</li>
+            <li>oman</li>
         </ol>
     </div>
     <h1 id="garbage-goober">Mmm trash I love trash yum yum trash gotta eat trash</h1>
+    <button>hi</button>
 </body>
 
 </html>
