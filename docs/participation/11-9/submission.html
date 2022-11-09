@@ -28,7 +28,7 @@
             web server implementation that contains a server side
             presence.
         */
-        /*window.onload = function () {
+        window.onload = function () {
             //(GET method) get your query string values by field
             var firstName = GetURLParameterValue("first");
             var lastName = GetURLParameterValue("last");
@@ -54,7 +54,7 @@
                     return parameterValues[1];
                 }
             }
-        };*/
+        };
     </script>
 
 </head>
@@ -66,24 +66,10 @@
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>~Lemons~</th>
-            <th>CHECK</th>
         </tr>
         <tr>
-            <td id="fname">
-                <%= first %>
-            </td>
-            <td id="lname">
-                <%= last %>
-            </td>
-
-            <td id="lemons">
-                <%= lemons %>
-            </td>
-
-            <td id="for-styling">
-                <%= check2 %>
-            </td>
+            <td id="fname"></td>
+            <td id="lname"></td>
         </tr>
     </table>
 </body>
